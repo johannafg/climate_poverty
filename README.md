@@ -24,7 +24,7 @@ This work is distributed under the Creative Commons Attribution 4.0 Internationa
 Citation: Fajardo-Gonzalez, J., Nguyen, M., and Corral, P. (2025). The Future of Poverty: Projecting the Impact of Climate Change on Global Poverty through 2050. The World Bank Group.
 
 Contact 
-For inquiries, please contact Paul Corral Rodas – pcorralrodas@worldbank.org -, Minh Nguyen -mnguyen3@worldbank.org-, and Johanna Fajardo-Gonzalez – jfajardog@worldbank.org
+For inquiries, please contact Paul Corral Rodas – pcorralrodas@worldbank.org -, Minh Nguyen - mnguyen3@worldbank.org -, and Johanna Fajardo-Gonzalez – jfajardog@worldbank.org
 
  
 
