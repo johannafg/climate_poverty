@@ -6,7 +6,7 @@ This folder contains the reproducibility package for the Working Paper “The Fu
 
 Software: Stata 16 MP (or any higher version).  Using the following ados: findpov, findsigma, groupfunction,lineup, sp_groupfunction, which are available in folder 1_code/ado.
  
-\large{**Contents of the Package**}
+**Contents of the Package**
 
 The replication package includes the following key components: 
 
