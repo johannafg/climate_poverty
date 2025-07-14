@@ -1,4 +1,6 @@
 Reproducibility Package for “The Future of Poverty: Projecting the Impact of Climate Change on Global Poverty through 2050”
+
+
 This folder contains the reproducibility package for the Working Paper “The Future of Poverty: Projecting the Impact of Climate Change on Global Poverty through 2050” by Johanna Fajardo-Gonzalez, Minh Nguyen and Paul Corral Rodas.
 
 
