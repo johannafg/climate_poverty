@@ -79,8 +79,6 @@ la val esttype esttype
 //drop oldcase
 drop if code=="IND"
 
-//bring in actual data when available 2021, 2022: //<JFG: Please explain?> <Minh>: see above comments
-
 unique code year pline
 cap drop dupe
 duplicates tag code year pline, gen(dupe)
@@ -125,7 +123,6 @@ save `data4', replace
 use `data3', clear
 drop if _m==2
 drop _m
-*clonevar year = lineupyear
 merge m:1 code year using "$dataout\UN_pop", keepus(pop)
 drop if _m==2
 drop _m
@@ -144,7 +141,6 @@ save `datareg', replace
 use `data3', clear
 drop if _m==2
 drop _m
-*ren lineupyear year
 append using `datareg'
 merge m:1 code year using "$dataout\UN_pop", keepus(pop)
 drop if _m==2
@@ -235,8 +231,6 @@ la val esttype esttype
 //drop oldcase
 drop if code=="IND"
 
-//bring in actual data when available 2021, 2022: //<JFG: Please explain?> <Minh>: there are countries with actual data in 2022, 2023, so we can either ignore these entirely or use the actual numbers, this will change the regional/global numbers.
-
 unique code year pline
 
 merge 1:1 code year pline using "${datain}\PIP_survey_pline", keepus(headcount)
@@ -247,8 +241,7 @@ drop _m headcount
 tempfile datax1
 save `datax1', replace
 
-//add 41 countries from group/LIS/no age gender data for each case (CC and noCC)
-*merge m:1 code using "${dataout}\PIP_lineup2019_welftype.dta"
+
 merge m:1 code using "${datain}\PIP_lineup2022_welftype.dta"
 keep if _m==2
 keep code
@@ -272,7 +265,6 @@ save `data4', replace
 use `data3', clear
 drop if _m==2
 drop _m
-*clonevar year = lineupyear
 merge m:1 code year using "$dataout\UN_pop", keepus(pop)
 drop if _m==2
 drop _m
@@ -291,7 +283,6 @@ save `datareg', replace
 use `data3', clear
 drop if _m==2
 drop _m
-*ren lineupyear year
 append using `datareg'
 merge m:1 code year using "$dataout\UN_pop", keepus(pop)
 drop if _m==2

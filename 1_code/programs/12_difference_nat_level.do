@@ -47,26 +47,7 @@ use "$dataout\Ctrylvl_neutral_CC.dta", clear
 tempfile neutral
 save `neutral'
 	
-/*	use "$dataout\Ctrylvl_Demo_CC.dta", clear
-	rename povrate demo_cc
-	
-	merge 1:1 pline method year code using "$dataout\Ctrylvl_Demo_noCC.dta"
-		drop if _m==2
-		drop _m
-	
-	rename povrate demo_nocc
-	
-	gen diff = 100*(demo_cc/demo_nocc - 1)
-	gen pp_diff = 100*(demo_cc - demo_nocc)
-	
-	keep code year pline  incgroup_hist pop diff pp_diff
-	gen method = "Demographic"
-	keep if inlist(pline,215,365,685)
-	levelsof pline, local(plines)
-	levelsof year, local(years)
-		
-	append using `neutral'
-*/
+
 	
 	lab var diff "Percent change in poverty - Climate Change vs No climate change"
 	lab var pp_diff "Percent point difference in poverty - Climate Change vs No climate change"
