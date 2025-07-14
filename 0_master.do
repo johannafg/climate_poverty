@@ -29,7 +29,7 @@ else {
 // INSTALL COMMANDS AND PACKAGES
 
 
-local commands = "tabout confirmdir labelmiss ds3 groupfunction ineqdecgini"
+local commands = "tabout confirmdir labelmiss ds3 ineqdecgini"
 foreach c of local commands {
 	qui capture which `c' 
 	qui if _rc!=0 {
@@ -48,26 +48,26 @@ global programs = "$swdLocal\1_code\programs"
 
 di "Starting data prep... "
 
-run "$programs/0_baseyear2022pov.do"
+run "$programs/1_baseyear2022pov.do"
 
-run "$programs/1c_prep_data.do"
-run "$programs/1d_prep_data.do"
+run "$programs/2_prep_data.do"
+run "$programs/3_prep_data.do"
 
-qui run "$programs/2a_neutraldist_alt.do"
-qui run "$programs/2b_gini_change_lognormal.do"
-qui run "$programs/2c_gini_change_GIC_alt.do"
+qui run "$programs/4_neutraldist_alt.do"
+qui run "$programs/5_gini_change_lognormal.do"
+qui run "$programs/6_gini_change_GIC_alt.do"
 
 di "Starting aggregation to 2050... "
 
-run "$programs/4_aggregateto2050.do"
-run "$programs/5_Combining_aggregates.do"
+run "$programs/7_aggregateto2050.do"
+run "$programs/8_Combining_aggregates.do"
 
 di "Starting final output..."
 
-qui run "$programs/6_TablesandFigures.do"
-run "$programs/7a-aggregate_for_tableau.do"
-run "$programs/7b-GIC_aggregate_for_tableau.do"
+qui run "$programs/9_TablesandFigures.do"
+run "$programs/10-aggregate_for_tableau.do"
+run "$programs/11-GIC_aggregate_for_tableau.do"
 
-run "$programs/8-difference_nat_level.do" 
+run "$programs/12-difference_nat_level.do" 
 
 di "This is the end..."
